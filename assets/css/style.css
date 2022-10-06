@@ -1,0 +1,1128 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Racing+Sans+One&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Poppins';
+}
+
+.holder {
+  width: 100%;
+}
+
+header {
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  z-index: 2;
+}
+
+header div, header nav {
+  margin: 5px 20px;
+  width: 15%;
+}
+
+header div h2, header nav h2 {
+  text-align: center;
+}
+
+header nav {
+  width: 70%;
+  background-color: #eaeaea;
+}
+
+#scroll-to-top {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #b72d00;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  z-index: 1;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+}
+
+#scroll-to-top:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  background-color: #e73a00;
+  border-radius: 15px;
+}
+
+#return-to-index {
+  background-color: #b72d00;
+  color: #fff;
+  padding: 10px;
+  z-index: 1;
+  position: fixed;
+  top: 17%;
+  left: 20px;
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+}
+
+#return-to-index:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  background-color: #e73a00;
+  border-radius: 15px;
+}
+
+#go-to-reservations {
+  background-color: #b72d00;
+  color: #fff;
+  padding: 10px;
+  z-index: 1;
+  position: fixed;
+  top: 12%;
+  left: 20px;
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+}
+
+#go-to-reservations:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  background-color: #e73a00;
+  border-radius: 15px;
+}
+
+#error-message {
+  background-color: #b72d00;
+  color: #fff;
+  padding: 10px;
+  z-index: 3;
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  left: 0px;
+  text-align: center;
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+}
+
+#error-message:hover {
+  background-color: #e73a00;
+}
+
+nav {
+  padding: 10px;
+}
+
+nav #btnMenu {
+  display: none;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+}
+
+nav ul a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #000;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+nav ul a:hover {
+  -webkit-animation: tilt-shaking 0.25s 2;
+          animation: tilt-shaking 0.25s 2;
+  color: #fff;
+}
+
+nav ul a li {
+  font-size: 14pt;
+  padding: 5px;
+}
+
+nav ul a.active-nav-item {
+  color: #000;
+  background-color: #fff;
+  -webkit-animation: none;
+          animation: none;
+}
+
+nav ul a.active-nav-item:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.popup-whole-screen {
+  z-index: 3;
+  position: fixed;
+  background-color: #d0d0d0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: none;
+}
+
+.popup-whole-screen .invisible {
+  display: none;
+}
+
+.popup-whole-screen .popup-wrapper {
+  background-color: #f3f3f3;
+  width: 30%;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.popup-whole-screen .popup-wrapper h3, .popup-whole-screen .popup-wrapper hr {
+  margin-bottom: 5px;
+}
+
+.popup-whole-screen .popup-wrapper h3 {
+  font-size: 20pt;
+}
+
+.popup-whole-screen .popup-wrapper .form-input-element {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 14pt;
+  margin-bottom: 10px;
+}
+
+.popup-whole-screen .popup-wrapper .form-input-element label {
+  width: 100%;
+}
+
+.popup-whole-screen .popup-wrapper .form-input-element input, .popup-whole-screen .popup-wrapper .form-input-element select {
+  width: 100%;
+  margin-top: 3px;
+  padding: 2px;
+}
+
+.popup-whole-screen .popup-wrapper .form-input-element #image {
+  color: red;
+}
+
+.popup-whole-screen .popup-wrapper .form-input-element span {
+  width: 100%;
+  margin-top: 3px;
+  background-color: #dad9d9;
+  color: red;
+}
+
+.popup-whole-screen .popup-wrapper .button-group span {
+  font-size: 14pt;
+  width: 100%;
+  margin-top: 3px;
+  color: red;
+}
+
+.popup-whole-screen .popup-wrapper .button-group input {
+  width: 100%;
+  border-radius: 10px;
+  padding: 4px;
+  height: 25px;
+  font-weight: bold;
+  font-size: 11pt;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  background-color: #d7d7d7;
+  margin-bottom: 10px;
+  color: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.popup-whole-screen .popup-wrapper .button-group input:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #000;
+  padding: 10px;
+}
+
+footer #footer-wrapper {
+  width: 40%;
+  background-color: rgba(224, 224, 224, 0.8);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer #footer-wrapper div {
+  margin: 5px 0px;
+}
+
+footer #footer-wrapper div#footer-copyright hr {
+  margin-top: 3px;
+  border-top: 1px solid #000;
+}
+
+footer #footer-wrapper div#footer-links {
+  font-size: 30pt;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer #footer-wrapper div#footer-links a {
+  color: #000;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+footer #footer-wrapper div#footer-links a:hover {
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  color: #ff3d3d;
+}
+
+main {
+  padding: 10px;
+}
+
+#main-author div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#main-author div img {
+  width: 500px;
+}
+
+#main-author div p {
+  width: 80%;
+  margin-top: 10px;
+  font-size: 15pt;
+  padding: 5px;
+  background-color: #d3d3d3;
+}
+
+#main-author div p a {
+  color: orangered;
+  text-decoration: none;
+}
+
+#main-index .destination-holder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #eaeaea;
+  margin: 10px 0px;
+  padding: 10px;
+}
+
+#main-index .destination-holder .destination-information {
+  margin: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#main-index .destination-holder .carousel {
+  width: 60%;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+#main-index .destination-holder .carousel:hover {
+  -webkit-transform: scaleX(1.05);
+          transform: scaleX(1.05);
+}
+
+#main-index #specific-destination-holder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #e7e7e7;
+  margin: 10px 0px;
+  padding: 10px;
+}
+
+#main-index #specific-destination-holder .carousel {
+  width: 60%;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+#main-index #specific-destination-holder .carousel:hover {
+  -webkit-transform: scaleX(1.05);
+          transform: scaleX(1.05);
+}
+
+#main-index #specific-destination-holder #destination-information-holder {
+  margin: 10px;
+}
+
+#main-index #specific-destination-holder #destination-activities-holder h4 {
+  text-align: center;
+}
+
+#main-index #specific-destination-holder #destination-activities-holder .activity-holder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #e7e7e7;
+  margin: 10px 0px;
+  padding: 10px;
+}
+
+#main-index #specific-destination-holder #destination-activities-holder .activity-holder .activity-information {
+  margin: 10px;
+}
+
+#main-make-a-reservation #reservation-holder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#main-make-a-reservation #reservation-holder .reservation-region-holder {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#main-make-a-reservation #reservation-holder .reservation-region-holder h4 {
+  width: 70%;
+  padding: 10px;
+  background-color: #c5c5c5;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#main-make-a-reservation #reservation-holder .reservation-region-holder #reservation-select-region-holder {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#main-make-a-reservation #reservation-holder .reservation-region-holder #reservation-select-region-holder .reservation-select-holder {
+  padding: 10px;
+  border-radius: 10px;
+  width: 50%;
+}
+
+#main-make-a-reservation #reservation-holder .reservation-region-holder #reservation-select-region-holder #reservation-destination-carousel {
+  width: 35%;
+}
+
+#main-make-a-reservation #reservation-holder .reservation-region-holder #reservation-select-region-holder .reservation-select-holder, #main-make-a-reservation #reservation-holder .reservation-region-holder #reservation-select-region-holder #reservation-destination-carousel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#main-make-a-reservation #reservation-holder .reservation-region-holder #reservation-select-region-holder .reservation-select-holder hr, #main-make-a-reservation #reservation-holder .reservation-region-holder #reservation-select-region-holder #reservation-destination-carousel hr {
+  width: 100%;
+  border-top: 2px solid #000;
+}
+
+#main-make-a-reservation #reservation-holder .reservation-region-holder #reservation-select-region-holder .reservation-select-holder #reservation-inputs-holder, #main-make-a-reservation #reservation-holder .reservation-region-holder #reservation-select-region-holder #reservation-destination-carousel #reservation-inputs-holder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+#main-make-a-reservation #reservation-holder .reservation-region-holder #reservation-select-region-holder .reservation-select-holder #reservation-inputs-holder .reservation-input-holder, #main-make-a-reservation #reservation-holder .reservation-region-holder #reservation-select-region-holder #reservation-destination-carousel #reservation-inputs-holder .reservation-input-holder {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#main-make-a-reservation #reservation-holder .reservation-region-holder #reservation-select-region-holder .reservation-select-holder label, #main-make-a-reservation #reservation-holder .reservation-region-holder #reservation-select-region-holder #reservation-destination-carousel label {
+  margin-right: 10px;
+  padding: 5px;
+  width: 20%;
+  word-wrap: break-word;
+  color: #ff3d3d;
+}
+
+#main-make-a-reservation #reservation-holder .reservation-region-holder #reservation-select-region-holder .reservation-select-holder select, #main-make-a-reservation #reservation-holder .reservation-region-holder #reservation-select-region-holder #reservation-destination-carousel select {
+  width: 75%;
+  text-align: center;
+  padding: 5px;
+  background: #000;
+  color: #fff;
+}
+
+#main-make-a-reservation #reservation-holder .reservation-region-holder #submit-reservation-holder {
+  width: 100%;
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#main-make-a-reservation #reservation-holder .reservation-region-holder #submit-reservation-holder label {
+  padding: 10px;
+  width: 40%;
+  background-color: #c5c5c5;
+  text-align: center;
+}
+
+#main-make-a-reservation #reservation-holder .reservation-region-holder #submit-reservation-holder span {
+  color: #b72d00;
+  font-size: large;
+}
+
+#main-make-a-reservation #reservation-holder .reservation-region-holder #submit-reservation-holder #reservation-submit-request-span {
+  color: #f00;
+}
+
+#main-make-a-reservation #reservation-holder .reservation-region-holder #submit-reservation-holder input {
+  width: 40%;
+  margin-top: 10px;
+  height: 40px;
+  font-weight: bold;
+  font-size: 11pt;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  background-color: #d7d7d7;
+  margin-bottom: 10px;
+  color: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#main-make-a-reservation #reservation-holder .reservation-region-holder #submit-reservation-holder input:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+#main-show-reservations {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px 30px;
+  min-width: 400px;
+  background-color: #8f8b8b;
+  border-radius: 10px;
+}
+
+#main-show-reservations #go-to-reservations {
+  top: 10%;
+}
+
+#main-show-reservations #table-information-wrapper {
+  display: none;
+  background-color: rgba(228, 228, 228, 0.9);
+  padding: 5px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+#main-show-reservations #table-information-wrapper table {
+  padding: 5px;
+  border: 1px solid;
+}
+
+#main-show-reservations #table-information-wrapper table thead tr {
+  background-color: rgba(128, 128, 128, 0.9);
+}
+
+#main-show-reservations #table-information-wrapper table tr:nth-child(even) {
+  background-color: rgba(185, 184, 184, 0.9);
+}
+
+#main-show-reservations #table-information-wrapper table th {
+  font-size: large;
+  text-align: center;
+}
+
+#main-show-reservations #table-information-wrapper table td, #main-show-reservations #table-information-wrapper table th {
+  border: 1px solid;
+  padding: 10px;
+}
+
+#main-show-reservations #table-information-wrapper table td input, #main-show-reservations #table-information-wrapper table th input {
+  width: 100px;
+  text-align: center;
+}
+
+#main-show-reservations #table-information-wrapper table td input:hover, #main-show-reservations #table-information-wrapper table th input:hover {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #000;
+  color: #fff;
+}
+
+#main-admin-panel #tables-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px 30px;
+  min-width: 400px;
+  background-color: #8f8b8b;
+  border-radius: 10px;
+}
+
+#main-admin-panel #tables-wrapper #statistics table {
+  padding: 5px;
+  border: 1px solid;
+}
+
+#main-admin-panel #tables-wrapper #statistics table tr {
+  text-align: center;
+}
+
+#main-admin-panel #tables-wrapper #statistics table thead tr {
+  background-color: rgba(185, 184, 184, 0.9);
+}
+
+#main-admin-panel #tables-wrapper #statistics table tr:nth-child(even) {
+  background-color: rgba(206, 206, 206, 0.9);
+}
+
+#main-admin-panel #tables-wrapper #statistics table th {
+  font-size: large;
+  text-align: center;
+}
+
+#main-admin-panel #tables-wrapper #statistics table td, #main-admin-panel #tables-wrapper #statistics table th {
+  border: 1px solid;
+  padding: 10px;
+}
+
+#main-admin-panel #tables-wrapper #statistics table td input, #main-admin-panel #tables-wrapper #statistics table th input {
+  width: 100px;
+  text-align: center;
+}
+
+#main-admin-panel #tables-wrapper #statistics table td input:hover, #main-admin-panel #tables-wrapper #statistics table th input:hover {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #000;
+  color: #fff;
+}
+
+#main-admin-panel #tables-wrapper #select-table-to-show {
+  margin-bottom: 10px;
+  padding: 15px;
+  width: 70%;
+  background-color: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#main-admin-panel #tables-wrapper #select-table-to-show #admin-search {
+  display: none;
+  background-color: #b9b8b8;
+  padding: 15px;
+}
+
+#main-admin-panel #tables-wrapper #select-table-to-show #admin-search span {
+  width: 100%;
+  margin-top: 3px;
+  background-color: #dad9d9;
+  color: red;
+}
+
+#main-admin-panel #tables-wrapper #select-table-to-show #admin-search #search-button, #main-admin-panel #tables-wrapper #select-table-to-show #admin-search #search-reset {
+  padding: 3px;
+}
+
+#main-admin-panel #tables-wrapper #select-table-to-show select {
+  text-align: center;
+  padding: 5px;
+}
+
+#main-admin-panel #tables-wrapper #table-information-wrapper {
+  display: none;
+  background-color: rgba(228, 228, 228, 0.9);
+  padding: 5px;
+}
+
+#main-admin-panel #tables-wrapper #table-information-wrapper table {
+  padding: 5px;
+  border: 1px solid;
+}
+
+#main-admin-panel #tables-wrapper #table-information-wrapper table thead tr {
+  background-color: rgba(185, 184, 184, 0.9);
+}
+
+#main-admin-panel #tables-wrapper #table-information-wrapper table tr:nth-child(even) {
+  background-color: rgba(185, 184, 184, 0.9);
+}
+
+#main-admin-panel #tables-wrapper #table-information-wrapper table th {
+  font-size: large;
+  text-align: center;
+}
+
+#main-admin-panel #tables-wrapper #table-information-wrapper table td, #main-admin-panel #tables-wrapper #table-information-wrapper table th {
+  border: 1px solid;
+  padding: 10px;
+}
+
+#main-admin-panel #tables-wrapper #table-information-wrapper table td input, #main-admin-panel #tables-wrapper #table-information-wrapper table th input {
+  width: 100px;
+  text-align: center;
+}
+
+#main-admin-panel #tables-wrapper #table-information-wrapper table td input:hover, #main-admin-panel #tables-wrapper #table-information-wrapper table th input:hover {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #000;
+  color: #fff;
+}
+
+#main-admin-panel #tables-wrapper #select-item-to-insert {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 15px;
+  width: 70%;
+  background-color: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#main-admin-panel #tables-wrapper #select-item-to-insert select {
+  text-align: center;
+  padding: 5px;
+}
+
+@media screen and (max-width: 1000px) and (min-width: 0px) {
+  header {
+    display: block;
+  }
+  header #header-logo {
+    display: none;
+  }
+  header #header-text {
+    display: none;
+  }
+  header nav {
+    position: fixed;
+    top: 0px;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    display: block;
+  }
+  header nav #btnMenu {
+    display: block;
+    width: 100%;
+    background-color: #aeaeae;
+    height: 40px;
+  }
+  header nav ul {
+    display: none;
+    padding: 0px;
+  }
+  header nav ul a li {
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #000;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+  }
+  header nav ul a li:hover {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    border-width: 2px 0px 2px 0px;
+    color: #f00;
+  }
+  header nav ul a.active-nav-item li {
+    color: #000;
+    background-color: #fff;
+    -webkit-animation: none;
+            animation: none;
+  }
+  header nav ul a.active-nav-item li:hover {
+    color: #f00;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  header nav ul.show {
+    display: block;
+  }
+  .popup-whole-screen .popup-wrapper {
+    width: auto;
+  }
+  footer #footer-wrapper {
+    width: 95%;
+  }
+  #main-author div img {
+    width: 200px;
+  }
+  #main-make-a-reservation {
+    padding-top: 50px;
+  }
+  #main-make-a-reservation #reservation-holder .reservation-region-holder h4 {
+    width: 100%;
+  }
+  #main-make-a-reservation #reservation-holder .reservation-region-holder .carousel {
+    width: 100%;
+  }
+  #main-make-a-reservation #reservation-holder .reservation-region-holder #reservation-select-region-holder {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #main-make-a-reservation #reservation-holder .reservation-region-holder #reservation-select-region-holder .reservation-select-holder, #main-make-a-reservation #reservation-holder .reservation-region-holder #reservation-select-region-holder #reservation-destination-carousel {
+    width: 100%;
+  }
+  #main-make-a-reservation #reservation-holder .reservation-region-holder #reservation-select-region-holder .reservation-select-holder #reservation-inputs-holder .reservation-input-holder, #main-make-a-reservation #reservation-holder .reservation-region-holder #reservation-select-region-holder #reservation-destination-carousel #reservation-inputs-holder .reservation-input-holder {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+  #main-make-a-reservation #reservation-holder .reservation-region-holder #reservation-select-region-holder .reservation-select-holder #reservation-inputs-holder .reservation-input-holder select, #main-make-a-reservation #reservation-holder .reservation-region-holder #reservation-select-region-holder #reservation-destination-carousel #reservation-inputs-holder .reservation-input-holder select {
+    width: 100%;
+  }
+  #main-make-a-reservation #reservation-holder .reservation-region-holder #reservation-select-region-holder .reservation-select-holder #reservation-inputs-holder .reservation-input-holder label, #main-make-a-reservation #reservation-holder .reservation-region-holder #reservation-select-region-holder #reservation-destination-carousel #reservation-inputs-holder .reservation-input-holder label {
+    width: 100%;
+  }
+  #main-make-a-reservation #reservation-holder .reservation-region-holder #submit-reservation-holder label {
+    width: 100%;
+  }
+  #main-make-a-reservation #reservation-holder .reservation-region-holder #submit-reservation-holder input {
+    width: 100%;
+  }
+  #main-show-reservations #table-information-wrapper {
+    margin-top: 80px;
+  }
+  #main-show-reservations #go-to-reservations {
+    top: 42px;
+    right: auto;
+    left: 2px;
+  }
+  #main-index {
+    padding-top: 100px;
+  }
+  #main-index #return-to-index, #main-index #go-to-reservations {
+    top: 50px;
+  }
+  #main-index #go-to-reservations {
+    right: 0px;
+    left: auto;
+  }
+  #main-index #return-to-index {
+    left: 0px;
+  }
+  #main-index #destinations-holder .carousel, #main-index #specific-destination-holder .carousel {
+    width: 95%;
+  }
+}
+
+@-webkit-keyframes tilt-shaking {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(3deg);
+            transform: rotate(3deg);
+  }
+  50% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  75% {
+    -webkit-transform: rotate(-3deg);
+            transform: rotate(-3deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes tilt-shaking {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(3deg);
+            transform: rotate(3deg);
+  }
+  50% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  75% {
+    -webkit-transform: rotate(-3deg);
+            transform: rotate(-3deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+/*# sourceMappingURL=style.css.map */
